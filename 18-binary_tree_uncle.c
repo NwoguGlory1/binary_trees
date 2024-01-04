@@ -18,6 +18,9 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	binary_tree_t *granny = parent->parent;
 
 	/* check if parent is right/left child of granny*/
+	parent = node->parent;
+	granny = parent->parent;
+
 	if (granny->left == parent)
 		return (granny->right);
 	else if (granny->right == parent)
